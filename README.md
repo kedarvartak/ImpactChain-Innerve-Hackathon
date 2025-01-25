@@ -1,31 +1,97 @@
-# React & Tailwind CSS Starter Pack
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+# ImpactChain - Innerve Hackathon
 
-## Usage
+ImpactChain transforms traditional donations by leveraging blockchain technology to create a transparent and secure giving ecosystem.
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
+## Overview
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
+Our platform bridges the trust gap between donors and organizations through automated fund management and real-time tracking, ensuring every contribution creates verifiable impact.
+
+### Key Features
+
+- **Transparent Donations**: Blockchain technology ensures that all transactions are transparent and traceable.
+- **Automated Fund Management**: Smart contracts govern the entire donation lifecycle, eliminating intermediaries and reducing administrative overhead.
+- **Real-Time Tracking**: Donors can track their contributions in real-time, ensuring funds are utilized as intended.
+- **NFT Receipts**: Each donation generates a unique NFT receipt that serves as both proof of contribution and a dynamic tracker, updating in real-time.
+
+## Technologies Used
+
+- **Solana**: Blockchain platform for decentralized applications.
+- **React**: JavaScript library for building user interfaces.
+- **Express**: Web application framework for Node.js.
+- **Node.js**: JavaScript runtime for server-side programming.
+- **MetaMask**: Cryptocurrency wallet for interacting with the Ethereum blockchain.
+- **IPFS**: Decentralized file storage system.
+- **MongoDB**: NoSQL database for storing application data.
+
+## Architecture Diagram
+
+```mermaid
+graph TD
+    A[Donor] -->|Connect Wallet| B[Browse Causes]
+    B -->|Select Cause| C[View Impact Preview]
+    C -->|Make Donation| D[Smart Contract]
+    
+    D -->|Generate| E[Unique Tracking ID]
+    D -->|Create| F[Digital Receipt NFT]
+    
+    D -->|Fund Flow| G[Escrow Contract]
+    G -->|Stage 1: 40%| H[Initial Release]
+    G -->|Stage 2: 30%| I[Mid Release]
+    G -->|Stage 3: 30%| J[Final Release]
+    
+    K[Real-time Tracking System] -->|Update| L[Progress Dashboard]
+    K -->|Generate| M[AI Impact Reports]
+    
+    H & I & J -->|Status Update| K
+    
+    L -->|View Progress| A
+    M -->|View Impact| A
+    F -->|Store Receipt| A
+```
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/kedarvartak/ImpactChain-Innerve-Hackathon.git
     ```
-
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
+2. Navigate to the project directory:
+    ```bash
+    cd ImpactChain-Innerve-Hackathon
+    ```
+3. Install dependencies:
+    ```bash
     npm install
     ```
 
-1. Start the development server.
-    ```sh
+## Usage
+
+1. Start the development server:
+    ```bash
     npm start
     ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
-
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
+2. Open your browser and navigate to `http://localhost:3000`.
 
 ## Contributing
 
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+We welcome contributions from the community. Please fork the repository and submit pull requests.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have any questions or suggestions, please open an issue or contact us at [kedar.vartak22@vit.edu].
+
+---
+
+Thank you for contributing to ImpactChain!
