@@ -84,10 +84,6 @@ graph TD
 
 We welcome contributions from the community. Please fork the repository and submit pull requests.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 If you have any questions or suggestions, please open an issue or contact us at [kedar.vartak22@vit.edu].
