@@ -16,39 +16,94 @@ Our platform bridges the trust gap between donors and organizations through auto
 
 ## Technologies Used
 
-- **Solana**: Blockchain platform for decentralized applications.
-- **React**: JavaScript library for building user interfaces.
-- **Express**: Web application framework for Node.js.
-- **Node.js**: JavaScript runtime for server-side programming.
-- **MetaMask**: Cryptocurrency wallet for interacting with the Ethereum blockchain.
-- **IPFS**: Decentralized file storage system.
-- **MongoDB**: NoSQL database for storing application data.
+- `React` - Dynamic UI for donation tracking and impact visualization
+- `Node.js + Express` - Server handling and API management
+- `Polygon` - Fast, low-cost blockchain for smart contracts
+- `Chainlink` - Oracle service for real-world data verification
+- `Gemini API` - AI-powered impact report generation
+- `IPFS` - Decentralized storage for project proofs and NFT metadata
+- `MongoDB` - NoSQL database for user and project data
+- `MetaMask` - Wallet integration for blockchain interactions
+
 
 ## Architecture Diagram
 
 ```mermaid
 graph TD
-    A[Donor] -->|Connect Wallet| B[Browse Causes]
-    B -->|Select Cause| C[View Impact Preview]
-    C -->|Make Donation| D[Smart Contract]
-    
-    D -->|Generate| E[Unique Tracking ID]
-    D -->|Create| F[Digital Receipt NFT]
-    
-    D -->|Fund Flow| G[Escrow Contract]
-    G -->|Stage 1: 40%| H[Initial Release]
-    G -->|Stage 2: 30%| I[Mid Release]
-    G -->|Stage 3: 30%| J[Final Release]
-    
-    K[Real-time Tracking System] -->|Update| L[Progress Dashboard]
-    K -->|Generate| M[AI Impact Reports]
-    
-    H & I & J -->|Status Update| K
-    
-    L -->|View Progress| A
-    M -->|View Impact| A
-    F -->|Store Receipt| A
+    subgraph User_Interface
+        A[Donor] -->|Connect Wallet| B[Browse Causes]
+        B -->|Select Cause| C[View Impact Preview]
+        C -->|Make Donation| D[Smart Contract]
+    end
+
+    subgraph Blockchain_Layer
+        D -->|Deploy| E[Main Contract]
+        E -->|Generate| F[Digital Receipt NFT]
+        E -->|Initialize| G[Escrow Contract]
+        
+        G -->|Automated Release| H[Fund Distribution]
+        H -->|Stage 1: 40%| I[Initial Release]
+        H -->|Stage 2: 30%| J[Progress Release]
+        H -->|Stage 3: 30%| K[Final Release]
+        
+        F -->|Store Metadata| L[IPFS Storage]
+    end
+
+    subgraph AI_Analytics
+        N[Data Collection]
+        O[AI Engine]
+        P[Report Generation]
+        
+        N -->|Process| O
+        O -->|Analyze| P
+        
+        N -->|On-chain Data| Q[Transaction Data]
+        N -->|Off-chain Data| R[Impact Metrics]
+        
+        P -->|Generate| V[Impact Dashboard]
+        P -->|Create| W[Progress Reports]
+    end
+
+    subgraph Verification
+        X[Oracle Network]
+        X -->|Verify| H
+    end
+
+    I & J & K -->|Update| N
+    V & W -->|Display| A
+    L -->|Track| A
 ```
+
+## Tech Stack
+
+```mermaid
+graph TD
+    A[Frontend/React] -->|User Interface| B[Backend/Node.js]
+    B -->|API Calls| C[Express Server]
+    
+    subgraph Blockchain
+        D[Polygon Network]
+        E[Smart Contracts]
+        F[Chainlink Oracles]
+    end
+    
+    subgraph Data_Layer
+        G[MongoDB]
+        H[IPFS]
+        I[Gemini AI]
+    end
+    
+    C -->|Transactions| D
+    C -->|Store Data| G
+    C -->|Store Files| H
+    C -->|Generate Reports| I
+    
+    F -->|Verify Data| E
+    E -->|Update| D
+    
+    J[MetaMask] -->|Connect| A
+```
+
 
 ## Getting Started
 
